@@ -221,7 +221,7 @@ app.get("/room/add", function(req, res) {
  res.send(JSON.stringify(room_obj));
 });
 
-app.post("/room/add", function(req, res) {
+app.post("/api/room/add", function(req, res) {
      console.log(req.body)
      room_obj = req.body
      room_obj["sublease_id"] = (_DATA.length) + 1

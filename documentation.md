@@ -9,7 +9,7 @@ Date: 3/22/2019
 
 Project Topic: Sublease Availabilities in College Park
 
-URL:
+URL: https://ancient-chamber-14469.herokuapp.com/
 
 ---
 
@@ -42,7 +42,7 @@ Schema:
 
 HTML form route: `/add_room_page`
 
-POST endpoint route: `/room/add`
+POST endpoint route: `/api/room/add`
 
 Example Node.js POST request to endpoint:
 ```javascript
