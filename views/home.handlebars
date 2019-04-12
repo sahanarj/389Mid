@@ -1,0 +1,33 @@
+
+
+<html>
+
+<style>
+h1 {
+    font-family: 'Corben', Georgia, Times, serif;
+}
+div {
+    font-family: 'Nobile', Helvetica, Arial, sans-serif;
+}
+body {
+    background-color: #DDDDDD;
+}
+img {
+  width: 100%;
+}
+</style>
+<h1>Looking for a Sublease in College Park??</h1>
+<body><i>Click on the rooms below for more information!</i></body>
+<br>
+
+<body>
+  <img src= "http://cvs.umd.edu/images/site/campuspicture.jpg"
+  alt="College Park" style="float:right;width:800px;height:500px;">
+</body>
+
+<div id="result-rooms">
+{{#each body}}
+   <li><tr><td><a href="/sublease/{{this.sublease_id}}">{{this.room_name}}</a></td></tr></li>
+  {{/each}}
+</div>
+</html>

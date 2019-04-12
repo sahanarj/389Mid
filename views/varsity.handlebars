@@ -1,0 +1,25 @@
+<br>
+<body><i>Here are all of our availabilities in the Varsity,
+   our most popular apartment!!</i></body>
+<br>
+<img src="https://eqb82fcfg0kjguka-zippykid.netdna-ssl.com/wp-content/uploads/2016/04/VCP-Pic.jpg"
+style="float:right;width:800px;height:500px;">
+<body>{{{body}}}</body>
+
+<p id="demo">
+</p>
+
+<script>
+var rooms, text, rLen, i;
+rooms = {{body}};
+console.log("Here are the rooms " + rooms)
+rLen = rooms.length;
+
+text = "<ul>";
+for (i = 0; i < rLen; i++) {
+  text += "<li>" + rooms[i] + "</li>";
+}
+text += "</ul>";
+
+document.getElementById("demo").innerHTML = text;
+</script>

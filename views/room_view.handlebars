@@ -1,0 +1,41 @@
+<html>
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+</style>
+
+  <h1> Room: {{body.room_name}} </h1>
+
+  <table style="width:50%">
+  <tr>
+    <th>Apartment Complex:</th>
+    <td>{{ body.apartment}}</td>
+  </tr>
+  <tr>
+    <th>Address:</th>
+    <td>{{body.address}}</td>
+  </tr>
+  <tr>
+    <th>Phone Number:</th>
+    <td>{{body.contact}}</td>
+  </tr>
+  <tr>
+    <th>Price: </th>
+    <td>${{toJSON body.price}}</td>
+  </tr>
+  <tr>
+    <th>Semester Available: </th>
+    <td>{{body.semester}} </td>
+  </tr>
+  <tr>
+    <th>Amenities:</th>
+    <td>{{body.amenities}}</td>
+  </tr>
+</table>
+</html>

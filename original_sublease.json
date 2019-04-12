@@ -1,0 +1,28 @@
+{
+   "sublease":[
+      {
+        "sublease_id":1,
+        "room_name":"Varsity 71",
+         "apartment":"Varsity",
+         "address": "8150 Baltimore Avenue",
+         "contact":"111-222-3333",
+         "amenities":[
+            "Separate Bathroom",
+            "Kitchen","Washer","Dryer"
+         ],
+         "room_number":71
+      },
+      {
+        "sublease_id":2,
+        "room_name":"Commons 71",
+         "apartment":"Commons",
+         "address": "8140 Baltimore Avenue",
+         "contact":"222-555-6666",
+         "amenities":[
+            "Shared Bathroom",
+            "Kitchen"
+         ],
+         "room_number":101
+      }
+   ]
+}

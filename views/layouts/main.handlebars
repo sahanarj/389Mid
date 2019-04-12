@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/public/css/main.css">
+  <title>Final Project</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+</head>
+
+<div class="nav">
+  <div>
+    <a href="/Kitchen">Apartments with a Kitchen!</a>
+    <a href="/Affordable">Affordable</a>
+    <a href="/Fall2019">Fall 2019 Availabilities</a>
+    <a href="/Varsity">Varsity Availabilities</a>
+    <a href="/CS">Near Computer Science</a><br>
+    
+    <body>Search for a room here! (available only on the main page)<body>
+    <div class="search-container">
+
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search" id="search-query">
+    </form>
+
+  </div>
+  </div>
+</div>
+
+<body>
+  <button type="button" onclick="location.href='/add_room_page'" id="createNew">Add a Room for Sublease!</button> {{{body}}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+  <script>
+    $('#createNew').on('click', function() {
+    });
+  </script>
+</body>
+
+<script>
+  var input = document.getElementById("text");
+
+
+  function updateTable(data)
+  {
+    var tableBody = $("#rev-table tbody");
+    tableBody.empty(); //delete all the existing rows (from the body only, not the header)
+
+    //here, process your response data to create new rows. You can create a new row like this:
+    var row = $("<tr/>");
+    //now go through your data items and append all the necessary cells. You can create a cell, and append it to the row something like this:
+    $("<td/>", { text: response[website]['total_spent'] }).appendTo(row);
+    //repeat that for each cell you need. Then once you have all the cells, append the row to the table:
+    row.appendTo(tableBody);
+    //and repeat that for each row you need
+  }
+
+
+  $("#search-query").keyup(function() {
+   var data = document.getElementById("search-query").value;
+  console.log(data);
+    //alert("one");
+    if(data=="" || data==null){
+      data = "ALL"
+    }
+       $.ajax({
+          url: "/api/search/"+data,
+
+          success: function (data) {
+            //$("#search-result").text(data)
+            $("#result-rooms").empty();
+            myitems = (data);
+
+            for (item in  myitems) {
+               var entry = "<li><tr><td><a href=\"/sublease/"+myitems[item].sublease_id
+               +"\">"+myitems[item].room_name+"</a></td></tr></li>";
+               console.log(entry)
+              $("#result-rooms").append(entry);
+            }
+          }
+          });
+  });
+
+
+
+</script>
+
+
+</html>
